@@ -1,0 +1,13 @@
+==> Normal scaffolding with connection string.
+
+Scaffold-DbContext "Data Source=.\sqlexpress;Initial Catalog=BookStoresDB;Integrated Security=True;Encrypt=False;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+
+
+
+==> Scaffold with connection string stored in appsettings (here force added to update the previous scaffolded file)
+
+ "ConnectionStrings": {
+   "BookStoresDB": "Data Source=.\\sqlexpress;Initial Catalog=BookStoresDB;Integrated Security=True;Encrypt=False"
+ }
+
+Scaffold-DbContext -Connection Name=BookStoresDB Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -force
