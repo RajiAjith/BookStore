@@ -1,0 +1,15 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/BookStoresWebAPI/.vs/BookStoresWebAPI/FileContentIndex
+/BookStoresWebAPI/.vs/BookStoresWebAPI/v17
+/.vs/BookStore/CopilotIndices/17.14.878.3237
+/.vs/BookStore/FileContentIndex
+/.vs/BookStore/v17
+/.vs/slnx.sqlite
+/.vs/VSWorkspaceState.json
+/BookStoresWebAPI/.vs/BookStoresWebAPI/config/applicationhost.config
+/BookStoresWebAPI/.vs/BookStoresWebAPI/copilot-chat/37e62822/sessions
+/BookStoresWebAPI/.vs/BookStoresWebAPI/CopilotIndices/17.14.878.3237
+/BookStoresWebAPI/.vs/BookStoresWebAPI/DesignTimeBuild/.dtbcache.v2
