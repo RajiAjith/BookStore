@@ -24,7 +24,10 @@ namespace BookStoresWebAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Author>>> GetAuthors()
         {
-            return await _context.Authors.ToListAsync();
+            return await _context.Authors
+                .AsNoTracking()
+                .Include(author => author.BookAuthors)
+                .ToListAsync();
         }
 
         // GET: api/Authors/5
@@ -34,10 +37,10 @@ namespace BookStoresWebAPI.Controllers
             try
             {
                 var author = await _context.Authors
+                    .AsNoTracking()
                     .Include(author => author.BookAuthors)
                     .ThenInclude(author => author.Book)
                     .ThenInclude(author => author.Sales)
-                    .ThenInclude(author => author.Book)
                     .Where(author => author.AuthorId == id)
                     .FirstOrDefaultAsync();
                 if (author == null)

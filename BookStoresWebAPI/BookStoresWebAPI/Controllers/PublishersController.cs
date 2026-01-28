@@ -42,13 +42,25 @@ namespace BookStoresWebAPI.Controllers
         [HttpGet("GetPublisherDetails/{id}")]
         public async Task<ActionResult<Publisher>> GetPublisherDetails(int id)
         {
-            var publisher = await _context.Publishers
-                .Include(pub => pub.Books)
-                .ThenInclude(pub => pub.BookAuthors)
-                .Include(pub => pub.Users)
-                .ThenInclude(pub => pub.Role)
-                .Where(pub => pub.PubId == id)
-                .FirstOrDefaultAsync();
+            //Eager Loading
+            //var publisher = await _context.Publishers
+            //    .Include(pub => pub.Books)
+            //        .ThenInclude(pub => pub.Sales)
+            //    .Include(pub => pub.Users)
+            //        .ThenInclude(pub => pub.Role)
+            //    .Where(pub => pub.PubId == id)
+            //    .FirstOrDefaultAsync();
+            //Explicit Loading
+            var publisher = await _context.Publishers.SingleAsync(pub => pub.PubId == id); 
+            await _context.Entry(publisher)
+                .Collection(pub => pub.Books)
+                .Query()
+                .LoadAsync();
+            await _context.Entry(publisher)
+                .Collection(pub => pub.Users)
+                .Query()
+                .Include(users => users.Role)
+                .LoadAsync();
 
             if (publisher == null)
             {

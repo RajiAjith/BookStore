@@ -257,3 +257,4 @@ D:\RAJI\BookStore\BookStoresWebAPI\BookStoresWebAPI\bin\Debug\net8.0\zh-Hant\Mic
 D:\RAJI\BookStore\BookStoresWebAPI\BookStoresWebAPI\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
 D:\RAJI\BookStore\BookStoresWebAPI\BookStoresWebAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 D:\RAJI\BookStore\BookStoresWebAPI\BookStoresWebAPI\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
+D:\RAJI\BookStore\BookStoresWebAPI\BookStoresWebAPI\obj\Debug\net8.0\BookStoresWebAPI.sourcelink.json
